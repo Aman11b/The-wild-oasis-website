@@ -65,3 +65,5 @@
 - can import -> other client components(cant go back in the client server boundry)
 - can render -> can render if client and server component passed as props
 - when re-render? -> on URL chnages(navigation)
+
+> render to readable stream is used to strem loading compoent
