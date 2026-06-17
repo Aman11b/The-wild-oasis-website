@@ -1,3 +1,3 @@
 export default function Page() {
-  return <h1>HELLOW WORLD</h1>;
+  return <h1>about Page</h1>;
 }
