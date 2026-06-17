@@ -107,3 +107,9 @@
 - SSR happens only on initial render on re-render client components only render on the actual client
 
 > both client and server components are executed on the server,on the initial server-side render.But from there on, as the app is interactive in the browser,server components only run on the actual web server and client components only run on the actual client,so the actual web browser.
+
+## Image
+
+- First of all,it will automatically serve correctly sized images in modern formats.For example, WebP.And it will also only do this on demand,so only when it's actually necessary.
+- Second, the Image component prevents layout shifts because it forces us to specify the exact height and width.
+- finally, it also automatically lazy loads images onlywhen they actually enter the viewport,
