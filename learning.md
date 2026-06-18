@@ -135,3 +135,50 @@
 ## error.js
 
 - error.js dont catch error if that happenins in root layout,also only in rendering errors
+
+## Static and dynamic rendering
+
+### Server side rendering
+
+- Nextjs is a react framwork so rendering is done by react follwoing the rules we learned earlier
+- both server and client compoent are rnedered on the server on the initial render
+- next js server-side rendering work is spilt by routes
+- each routes can be either static (also called pre-rendered) or dynamic
+- there is also a partial pre-rendering (PRR) whihc mixes dynamic and staic rendering in the same route
+
+### Static rendering
+
+- HTML is generated at built time or periodically in the backgroud by re-fetching data(IRS) Incremental staic regenration
+- useful when data doent change often and is not personlized to user
+- default rendering statergy in nextjs(even when a page or compoent fetched data)
+- when deployed to vercel each static route is automatically hosted on CDN content delivery network
+- if all routes of an app are staic the entire app can be exported as a static site SSG static site generation
+
+## Dynamic rendering
+
+- HTML is generated at request time(for each new request reaches the server)
+- this makes sense if:
+  - tehd ata chnages frequenty and is personiized to the user
+  - rendering a route requires infomration that depends on request
+- a route automaically switched to dynamic rendering in certain conditions
+- whe deployed to versel each dynamic route becomes a serveless function
+
+## when next switched between both
+
+- the route has dynamic segments (page uses params)
+- searchParams are used in the page component
+- header() or cookies ( are used in any of the routers server compoent)
+- an uncahcehd data request is made in any route server compoent
+
+## some terminology
+
+- CONTENT DELIVERY NETWORK(CDN) a network of server located aroud the globe that cache and deliver a website static content(HTML CSS JS IMAGE) from as close as possible to each user
+- Serverless computing: with the serverless computing mode we can run aplication code ussually back-end code without managing the server ourselves we can just run single function on a cloud provider: SERVERLESS FUNCTION.The server is initilize and active only for the duration the serverless function is running unlike a traditional node.js app where the server is constantly running
+
+### each dynamic route becomes serverless function
+
+- the "Edge": as close as possible to the user.A CDN is a part of an edge network but there is alos serverless edge computing this is serverless coputing that doest not happebnds on a certral server but on a network that is distributed around the globe as close as possible to the user
+
+> we can selecte certain routes to run on the edge when deploying on vercel
+
+- incremental static regeneration (ISR) a next js feature that allow developer toupdate the content of a static page in the backgroud even after the website has a;ready been built and deployed,This happens by refetching the data of a conmponent or entire route after a certain interval
