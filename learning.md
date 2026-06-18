@@ -113,3 +113,21 @@
 - First of all,it will automatically serve correctly sized images in modern formats.For example, WebP.And it will also only do this on demand,so only when it's actually necessary.
 - Second, the Image component prevents layout shifts because it forces us to specify the exact height and width.
 - finally, it also automatically lazy loads images onlywhen they actually enter the viewport,
+
+## what is suspense?
+
+- Built in react component that we can use to catch/isolate compoent(or entire subtree) that are not ready to be rendered("suspencing)
+- what cases a compoent to be suspending
+  - Fetching data(with support lib)
+  - loading code (with react lazy loading)
+- native wat to support asynchronous operations in a declarative way(no more isLoading states and render login)
+- while rendering suspending component is found -> go to closest suspence parent ("boundry) af discard alredy rendered children
+- display fallback compoent /JSX(spinner)
+- after async work is done-> render subtree under suspense boundry
+
+## A look behind the scenes of suspence
+
+- in fiber tree dusinr suspence the another build in component gets add in called activity and spinner is also add as fallback as children with hidden as suspence comment the children will be hidden and spinner gets activated and when its done it toggles back
+- state is preserved in subsquenet suspending
+- fallback will not be shpwn again if ther suspence trigger is wrapped in a transition,in next.js thats the case with page navigation we can reset the suspense boundry with unique key prop
+- how does suspense acutally knows that a component is suspending?-> trigger suspense by throwing promise
