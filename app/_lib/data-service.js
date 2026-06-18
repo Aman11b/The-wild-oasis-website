@@ -42,8 +42,6 @@ export const getCabins = async function () {
     .select("id, name, maxCapacity, regularPrice, discount, image")
     .order("name");
 
-  await new Promise((res) => setTimeout(res, 1000));
-
   if (error) {
     console.error(error);
     throw new Error("Cabins could not be loaded");
@@ -127,15 +125,23 @@ export async function getBookedDatesByCabinId(cabinId) {
   return bookedDates;
 }
 
+// export async function getSettings() {
+//   const { data, error } = await supabase.from("settings").select("*").single();
+
+//   if (error) {
+//     console.error(error);
+//     throw new Error("Settings could not be loaded");
+//   }
+
+//   return data;
+// }
+
 export async function getSettings() {
-  const { data, error } = await supabase.from("settings").select("*").single();
+  const result = await supabase.from("settings").select("*");
 
-  if (error) {
-    console.error(error);
-    throw new Error("Settings could not be loaded");
-  }
+  console.log(result);
 
-  return data;
+  return result.data;
 }
 
 // export async function getCountries() {
