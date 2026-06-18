@@ -182,3 +182,78 @@
 > we can selecte certain routes to run on the edge when deploying on vercel
 
 - incremental static regeneration (ISR) a next js feature that allow developer toupdate the content of a static page in the backgroud even after the website has a;ready been built and deployed,This happens by refetching the data of a conmponent or entire route after a certain interval
+
+## Partial pre rendering(PPR)
+
+- Idea/Problem : Most pages dont need to be 100% static aor 100% dyanamic
+- Soultion : PPR
+  > New rendering statergy that combines static and dynamic rendering in the same routes
+
+1. A static (pre -rendered) shell is served imediete;y from CDN leaving holes for dynamic content (Static shell)
+2. the slower dynamic content is streamed in as itsrenderred on the server
+
+## caching in NEXTjs
+
+- CASHING : storing fetched or computed data in a temporary location for furture access insted of having to re-redneer or re-computed the data every time its is needed
+- Next.js caches very aggressively eberything that is possible will be chached
+- Next.jjs provided APIS for cache revalidation: removing and updating with fresh data
+- caching is always on by default
+
+## caching mechanism
+
+### server
+
+## request memoization
+
+- data fetched with similart GET request (same url and options in fetch function)
+- one page request(one render, one user)
+- no need to fetch at the top of tree: the same fetch in multiple componentns onlt makes on request(on;y in component not route handler or server actions)
+- how to revalidate? NA
+- how to opt out? AbortController
+
+## data cache
+
+- data fetched in a route or a single fetch request
+- indefinitely even across de-deployes (can revalidate or opt out)
+- data for static Pages + when revalidationISR
+- how to revalidate?
+  - Time based automatic for all data on page
+    export const revalidate=(time);
+  - fetch ("...),{next:{revalidate: time}}
+  - on demaind(manual)
+    revalidatePath or reavalidateTag
+
+- how to opt out?
+  - entire page revaidating=0
+  - dynamic ="forced-dynamic"
+  - individual request {cache:"no-store}
+  - noStore()
+
+## full route cache
+
+- entire static pages(HTML and RSC payload)
+- untill the "data" cache is invalidated(or app is re-deployed)
+- enables static pages
+- how to revalidate?
+  - Time based automatic for all data on page
+    export const revalidate=(time);
+  - fetch ("...),{next:{revalidate: time}}
+  - on demaind(manual)
+    revalidatePath or reavalidateTag
+- how to opt out?
+  - entire page revaidating=0
+  - dynamic ="forced-dynamic"
+  - individual request {cache:"no-store}
+  - noStore()
+
+### client
+
+## router cache
+
+- pre-fetch and visisted pages static and dynamic
+- 30 sec dynamic/5 min static throught out one session
+- SPA like naviagtion
+- how to revalidate? NA
+- how to opt out? AbortController
+
+### this is the behavious in production mode.cachiing doenst work in development
