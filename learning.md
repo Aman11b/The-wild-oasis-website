@@ -131,3 +131,7 @@
 - state is preserved in subsquenet suspending
 - fallback will not be shpwn again if ther suspence trigger is wrapped in a transition,in next.js thats the case with page navigation we can reset the suspense boundry with unique key prop
 - how does suspense acutally knows that a component is suspending?-> trigger suspense by throwing promise
+
+## error.js
+
+- error.js dont catch error if that happenins in root layout,also only in rendering errors
