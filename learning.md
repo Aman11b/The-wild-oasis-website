@@ -266,3 +266,32 @@
 - read set cookines and headers
 - authorisation adn authetication
 - server side analytics
+
+## server action
+
+- enables interactivity in fulll statck apps
+- async function that runs exclusively on the server
+- created by " user server" directive only for server action not for server compoent it is default
+- server conpoennt dont bridge anything as they are on server anyway
+- next.js created API endpoint for each server action. whenever a server action is called POST req is made to URL
+- require running web server unline server components
+
+### server action can be defined at tht top of
+
+1. an asunc function in a server component.can be used in component or passed to a client composene
+2. standalone file(recommended)
+
+- server <---("use server")----- client (API endpoint)
+- server ---("use client")-----> client
+
+### server can be called form
+
+- action atribute in a form on SC and CC
+- event handlers,useEffect only in CC
+
+### in server action we can
+
+- data mutation
+- update ui with new data- revalidate cache
+- work with cookies
+  > code is runnign in backend so assuame input is unsafe
