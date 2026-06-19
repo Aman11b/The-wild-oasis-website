@@ -257,3 +257,12 @@
 - how to opt out? AbortController
 
 ### this is the behavious in production mode.cachiing doenst work in development
+
+### Middleware in NXEXTJS
+
+- Request-> Middle ware -> App route ->response
+  > Middle ware needs to produce a response either by redirecting or rewriting t a route or sending response directly
+- by default middle runs before every route in a project but we an speciy which path using a match
+- read set cookines and headers
+- authorisation adn authetication
+- server side analytics
