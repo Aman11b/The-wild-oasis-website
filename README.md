@@ -1,37 +1,71 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🚀  The Wild Oasis Website 
 
-## Getting Started
+**The Wild Oasis Website** is a modern full-stack hotel booking platform built as the customer-facing side of **The Wild Oasis ecosystem**.
 
-First, run the development server:
+Guests can browse available cabins, explore detailed cabin pages, check pricing and availability, create reservations, manage bookings, and update their profiles through a secure and intuitive experience.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+The application leverages modern **Next.js** features such as **Server Components**, **Server Actions**, **Streaming UI**, **Suspense**, and **Dynamic Routing**, while **NextAuth** provides secure authentication and route protection. Data is managed through **Supabase** and **PostgreSQL**, creating a complete end-to-end booking workflow.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### ✨ Key Features
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+🏡 **Cabin Discovery**
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+* 🛖 Browse available cabins
+* 📄 Dynamic cabin pages
+* 🖼️ Optimized images with Next.js
+* 💰 Pricing & availability information
 
-## Learn More
+📅 **Reservation System**
 
-To learn more about Next.js, take a look at the following resources:
+* ➕ Create reservations
+* ✏️ Update bookings
+* 🗑️ Cancel reservations
+* 📆 Interactive date selection
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+🔐 **Authentication & Security**
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+* 🌐 Google OAuth Login
+* 🔒 NextAuth Integration
+* 🛡️ Protected Routes
+* 🚦 Middleware Authorization
 
-## Deploy on Vercel
+👤 **Guest Dashboard**
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+* 🙍 Profile Management
+* 📋 Reservation History
+* ⚙️ Account Settings
+* 🏨 Booking Overview
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
-# The-wild-oasis-website
+⚡ **Modern Next.js Features**
+
+* 🖥️ Server Components
+* 🎯 Server Actions
+* 🌊 Streaming UI
+* ⏳ Suspense Boundaries
+
+🚀 **Performance Optimizations**
+
+* ⚡ Static Generation
+* 🔄 Cache Revalidation
+* 🖼️ Image Optimization
+* 🔤 Font Optimization
+
+### 📚 Concepts Practiced
+
+| Category          | Skills                                            |
+| ----------------- | ------------------------------------------------- |
+| ⚛️ React          | Server Components, Client Components, Context API |
+| 🚀 Next.js        | App Router, Dynamic Routes, Nested Layouts        |
+| 🔐 Authentication | NextAuth, Middleware Protection                   |
+| 📡 Data Fetching  | Server Actions, Cache Revalidation                |
+| ⚡ Performance     | Streaming UI, Suspense, Static Generation         |
+| 🛡️ Reliability   | Error Boundaries, Loading States                  |
+| 🗄️ Backend       | Supabase, PostgreSQL                              |
+| 🎨 Styling        | Tailwind CSS                                      |
+
+
+### 💡 What I Learned
+
+This project provided hands-on experience with modern React and Next.js development, particularly around server-side rendering, authentication, caching strategies, route protection, performance optimization, and building production-style full-stack applications.
+
+More importantly, it strengthened my debugging and problem-solving skills by exposing me to real-world development challenges that go far beyond simply making features work.
